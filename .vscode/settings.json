@@ -1,0 +1,9 @@
+{
+  "tslint.autoFixOnSave": true,
+  "editor.formatOnSave": true,
+  "javascript.format.enable": true,
+  "debug.node.autoAttach": "off",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.tslint": true
+  }
+}
