@@ -1,11 +1,13 @@
 <div class="content">
   <div class="logo">GDB Mall</div>
   <List>
-    <InputItem clear key="userName" placeholder="test" [content]="'账号'"></InputItem>
-    <InputItem lear key="password" type="password" placeholder="123456" [content]="'密码'"> </InputItem>
+    <InputItem clear key="userName" placeholder="test" [content]="'账号'" (onChange)="onUserNameChange($event)">
+    </InputItem>
+    <InputItem lear key="password" type="password" placeholder="123456" [content]="'密码'" (onChange)="
+      onPasswordChange($event)"> </InputItem>
   </List>
   <div class="operation">
-    <div Button [type]="primary" class="submitBtn">
+    <div Button [type]="primary" class="submitBtn" (click)="onShubmit()">
       立即登录
     </div>
     <p class="submitTips">
