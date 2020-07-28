@@ -11,6 +11,7 @@ import { ProductDetailComponent } from "./pages/product-detail/product-detail.co
 import { from } from "rxjs";
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { HomeComponent } from './pages/home/home.component';
+import { OrderComponent } from './pages/order/order.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { HomeComponent } from './pages/home/home.component';
     ProductDetailComponent,
     ProductListComponent,
     HomeComponent,
+    OrderComponent,
   ],
   imports: [
     BrowserModule,
