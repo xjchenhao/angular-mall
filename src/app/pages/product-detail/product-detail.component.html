@@ -28,12 +28,17 @@
     </Flex>
   </div>
   <div class="introduce" [innerHTML]="data.content"></div>
-  <div class="operation">
+  <div *ngIf="data.quantity>0;else soldOut" class="operation">
     <div class="shoppingCartBtn">加入购物车</div>
     <div class="buyBtn" (click)="onSubmit()">
       立即购买
     </div>
   </div>
+  <ng-template #soldOut>
+    <div class="operation">
+      <div class="buyBtnDisable">已售罄</div>
+    </div>
+  </ng-template>
 </div>
 
 <ng-template #icon>
