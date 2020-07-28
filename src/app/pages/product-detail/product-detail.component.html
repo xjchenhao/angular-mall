@@ -1,0 +1,41 @@
+<div class="countent">
+  <Navbar [icon]="icon" [rightContent]="rightContent" [mode]="'light'" (onLeftClick)="onBack()">
+    产品详情
+  </Navbar>
+  <Carousel [infinite]="true" [selectedIndex]="1" (beforeChange)="beforeChange($event)"
+    (afterChange)="afterChange($event)">
+    <CarouselSlide *ngFor="let item of data">
+      <img src="https://zos.alipayobjects.com/rmsportal/{{ item }}.png" key={item} alt="产品轮播图" loading="lazy"
+        class="bannerImg" />
+    </CarouselSlide>
+  </Carousel>
+  <div class="info">
+    <div class="title">产品名称</div>
+    <WhiteSpace [size]="'lg'"></WhiteSpace>
+    <Flex [align]="end">
+      <FlexItem>
+        <div class="price">
+          <div class="rmbsymbol">¥</div>
+          123
+          <div class="original">
+            123
+          </div>
+        </div>
+      </FlexItem>
+      <FlexItem>
+        <div class="quantity">库存：123</div>
+      </FlexItem>
+    </Flex>
+  </div>
+  <div class="introduce" [innerHTML]="product.content"></div>
+  <div class="operation">
+    <div class="shoppingCartBtn">加入购物车</div>
+    <div class="buyBtn">
+      立即购买
+    </div>
+  </div>
+</div>
+
+<ng-template #icon>
+  <Icon [type]="'left'"></Icon>
+</ng-template>
