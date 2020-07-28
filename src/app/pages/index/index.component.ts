@@ -11,6 +11,7 @@ export class IndexComponent implements OnInit {
     0: "/",
     1: "/my",
   };
+  private tabbarStyle: Object = { height: `${window.innerHeight}px` };
   constructor() {}
 
   ngOnInit() {
