@@ -7,9 +7,14 @@
       onPasswordChange($event)"> </InputItem>
   </List>
   <div class="operation">
-    <div Button [type]="primary" class="submitBtn" (click)="onShubmit()">
+    <div *ngIf="(!userName||!password);else preSubmit" Button [type]="primary" class="submitBtn" [disabled]="true">
       立即登录
     </div>
+    <ng-template #preSubmit>
+      <div Button [type]="primary" class="submitBtn" (click)="onShubmit()">
+        立即登录
+      </div>
+    </ng-template>
     <p class="submitTips">
       登录/注册即表示同意
       <a class="submitTipsLink" href="/login">
