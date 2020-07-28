@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { ToastService } from "ng-zorro-antd-mobile";
 import request from "./../../utils/request.js";
 
 @Component({
@@ -10,7 +11,7 @@ export class LoginComponent implements OnInit {
   public userName: String = "";
   public password: String = "";
 
-  constructor() {}
+  constructor(private _toast: ToastService) {}
 
   ngOnInit() {}
 
@@ -21,10 +22,10 @@ export class LoginComponent implements OnInit {
   onPasswordChange(value) {
     this.password = value;
   }
-  onShubmit() {
+  async onShubmit() {
     console.log(this.userName);
     console.log(this.password);
-    request({
+    const result = await request({
       url: "/api/login",
       type: "post",
       data: {
@@ -32,5 +33,13 @@ export class LoginComponent implements OnInit {
         password: this.password,
       },
     });
+
+    if (result.code !== "0") {
+      const toast = this._toast.show(result.msg, 1000);
+
+      return;
+    }
+
+    location.href = "/";
   }
 }
