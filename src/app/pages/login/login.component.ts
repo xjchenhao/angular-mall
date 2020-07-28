@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import request from "./../../utils/request.js";
 
 @Component({
   selector: "app-login",
@@ -23,7 +24,13 @@ export class LoginComponent implements OnInit {
   onShubmit() {
     console.log(this.userName);
     console.log(this.password);
-    // if(){
-    // }
+    request({
+      url: "/api/login",
+      type: "post",
+      data: {
+        userName: this.userName,
+        password: this.password,
+      },
+    });
   }
 }
