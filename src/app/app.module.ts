@@ -9,6 +9,7 @@ import { MyComponent } from "./pages/my/my.component";
 import { LoginComponent } from "./pages/login/login.component";
 import { ProductDetailComponent } from "./pages/product-detail/product-detail.component";
 import { from } from "rxjs";
+import { ProductListComponent } from './components/product-list/product-list.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { from } from "rxjs";
     MyComponent,
     LoginComponent,
     ProductDetailComponent,
+    ProductListComponent,
   ],
   imports: [
     BrowserModule,
