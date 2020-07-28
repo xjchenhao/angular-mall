@@ -1,7 +1,12 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 
-const routes: Routes = [];
+import { MyComponent } from "./pages/my/my.component";
+
+const routes: Routes = [
+  { path: "", component: MyComponent },
+  { path: "my", component: MyComponent },
+];
 
 @NgModule({
   declarations: [],
