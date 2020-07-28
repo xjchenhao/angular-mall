@@ -4,10 +4,9 @@ import { NgZorroAntdMobileModule } from "ng-zorro-antd-mobile";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { MyComponent } from "./component/my/my.component";
 
 @NgModule({
-  declarations: [AppComponent, MyComponent],
+  declarations: [AppComponent],
   imports: [BrowserModule, AppRoutingModule, NgZorroAntdMobileModule],
   providers: [],
   bootstrap: [AppComponent],
