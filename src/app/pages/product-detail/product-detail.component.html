@@ -2,35 +2,35 @@
   <Navbar [icon]="icon" [rightContent]="rightContent" [mode]="'light'" (onLeftClick)="onBack()">
     产品详情
   </Navbar>
-  <Carousel [infinite]="true" [selectedIndex]="1" (beforeChange)="beforeChange($event)"
-    (afterChange)="afterChange($event)">
-    <CarouselSlide *ngFor="let item of data">
-      <img src="https://zos.alipayobjects.com/rmsportal/{{ item }}.png" key={item} alt="产品轮播图" loading="lazy"
-        class="bannerImg" />
+  <Carousel *ngIf="data.banner&&data.banner.length" [infinite]="true" [vertical]="false" [selectedIndex]="1">
+    <CarouselSlide *ngFor="let item of data.banner">
+      <div style="display: inline-block; width: 100%;" [ngStyle]="{ height: imgHeight }">
+        <img src="{{item}}" style=" pointer-events: none; width: 100%" />
+      </div>
     </CarouselSlide>
   </Carousel>
   <div class="info">
-    <div class="title">产品名称</div>
+    <div class="title">{{data.name}}</div>
     <WhiteSpace [size]="'lg'"></WhiteSpace>
     <Flex [align]="end">
       <FlexItem>
         <div class="price">
           <div class="rmbsymbol">¥</div>
-          123
+          {{!!data.unifiedPrice && data.unifiedPrice.toFixed(2)}}
           <div class="original">
-            123
+            {{!!data.originalPrice && data.originalPrice.toFixed(2)}}
           </div>
         </div>
       </FlexItem>
       <FlexItem>
-        <div class="quantity">库存：123</div>
+        <div class="quantity">库存：{{data.quantity}}</div>
       </FlexItem>
     </Flex>
   </div>
-  <div class="introduce" [innerHTML]="product.content"></div>
+  <div class="introduce" [innerHTML]="data.content"></div>
   <div class="operation">
     <div class="shoppingCartBtn">加入购物车</div>
-    <div class="buyBtn">
+    <div class="buyBtn" (click)="onSubmit()">
       立即购买
     </div>
   </div>
