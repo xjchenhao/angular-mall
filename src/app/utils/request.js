@@ -37,6 +37,10 @@ const request = (options) => {
         //   router.push('/login')
         // })
 
+        alert("请先登录");
+
+        location.href("/login");
+
         return;
       }
 
