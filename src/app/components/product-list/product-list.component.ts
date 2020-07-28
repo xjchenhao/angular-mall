@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 
 @Component({
   selector: "app-product-list",
@@ -6,7 +6,12 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./product-list.component.less"],
 })
 export class ProductListComponent implements OnInit {
+  @Input() data: string;
   constructor() {}
 
   ngOnInit() {}
+
+  jumpToProductDetail(id) {
+    location.href = `/productDetail?id=${id}`;
+  }
 }

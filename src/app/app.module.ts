@@ -10,6 +10,7 @@ import { LoginComponent } from "./pages/login/login.component";
 import { ProductDetailComponent } from "./pages/product-detail/product-detail.component";
 import { from } from "rxjs";
 import { ProductListComponent } from './components/product-list/product-list.component';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ProductListComponent } from './components/product-list/product-list.com
     LoginComponent,
     ProductDetailComponent,
     ProductListComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

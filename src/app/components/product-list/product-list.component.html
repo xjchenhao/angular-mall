@@ -1,1 +1,17 @@
-<p>product-list works!</p>
+<div *ngFor="let item of data" key={item._id} class="item" (click)="jumpToProductDetail(item._id)">
+  <div class="left">
+    <img class="img" moda="scaleToFill" loading="lazy" src="{{item.banner[0]}}" alt="封面图" />
+  </div>
+  <div class="right">
+    <div class="title">{{item.name}}</div>
+    <div class="info">
+      <div class="price">
+        <div class="rmbsymbol">¥</div>
+        {{!!item.unifiedPrice && item.unifiedPrice.toFixed(2)}}
+        <div class="original">
+          {{!!item.originalPrice && item.originalPrice.toFixed(2)}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
