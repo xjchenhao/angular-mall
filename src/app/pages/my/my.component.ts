@@ -29,6 +29,10 @@ export class MyComponent implements OnInit {
     this.nickName = result.data.nickName;
   }
 
+  order() {
+    location.href = "/order";
+  }
+
   async onLogout() {
     const result = await request({
       url: "/api/logout",
