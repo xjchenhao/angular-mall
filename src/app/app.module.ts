@@ -12,6 +12,7 @@ import { from } from "rxjs";
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { HomeComponent } from './pages/home/home.component';
 import { OrderComponent } from './pages/order/order.component';
+import { IndexComponent } from './pages/index/index.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { OrderComponent } from './pages/order/order.component';
     ProductListComponent,
     HomeComponent,
     OrderComponent,
+    IndexComponent,
   ],
   imports: [
     BrowserModule,
